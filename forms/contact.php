@@ -29,7 +29,7 @@
     'host' => getenv('smtp_server'),
     'username' => getenv('smtp_email'),
     'password' => getenv('smtp_password'),
-    'port' => getenv('smtp_por')
+    'port' => getenv('smtp_port')
   );
   
 
