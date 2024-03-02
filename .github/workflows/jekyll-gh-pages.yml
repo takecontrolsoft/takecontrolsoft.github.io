@@ -46,6 +46,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Create Config File
+        run: echo "${{ secrets.CONFIGSMTP }}" > config.js
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
