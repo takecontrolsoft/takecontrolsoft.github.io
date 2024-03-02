@@ -45,6 +45,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    env:  
+      SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+      SMTP_EMAIL: ${{ secrets.SMTP_EMAIL }}
+      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      SMTP_PORT: ${{ secrets.SMTP_PORT }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

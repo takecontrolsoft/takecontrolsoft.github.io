@@ -26,10 +26,10 @@
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
   
   $contact->smtp = array(
-    'host' => getenv('smtp_server'),
-    'username' => getenv('smtp_email'),
-    'password' => getenv('smtp_password'),
-    'port' => getenv('smtp_port')
+    'host' => getenv('SMTP_SERVER'),
+    'username' => getenv('SMTP_EMAIL'),
+    'password' => getenv('SMTP_PASSWORD'),
+    'port' => getenv('SMTP_PORT')
   );
   
 
