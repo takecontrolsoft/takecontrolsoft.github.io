@@ -24,12 +24,13 @@
   $contact->subject = $_POST['subject'];
 
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  // Read the JSON file  
-  $json = file_get_contents('config.json'); 
   
-  // Decode the JSON file 
-  $json_data = json_decode($json,true); 
-  $contact->smtp = $json_data;
+  $contact->smtp = array(
+    'host' => getenv('smtp_server'),
+    'username' => getenv('smtp_email'),
+    'password' => getenv('smtp_password'),
+    'port' => getenv('smtp_por')
+  );
   
 
   $contact->add_message( $_POST['name'], 'From');
