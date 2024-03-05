@@ -126,7 +126,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   background: #fff;
-  border-bottom: 1.6mm solid #ff5821;
+  border-bottom: 1.2mm solid #ff5821;
 }
 
 #header.header-fixed {
@@ -583,16 +583,19 @@ section {
 .why-us .content {
   padding: 30px;
   background: #4CA841;
-  border-radius: 4px;
+  border-radius: 10px;
   color: #fff;
-  border-top: 1.6mm solid #ff5821;
-  border-bottom: 1.6mm solid #ff5821;
 }
 
 .why-us .content h3 {
   font-weight: 700;
   font-size: 30px;
   margin-bottom: 30px;
+  color: #584b48;
+}
+
+.why-us .icon-boxes .icon-box h4 {
+  color: #4CA841;
 }
 
 .why-us .content p {
