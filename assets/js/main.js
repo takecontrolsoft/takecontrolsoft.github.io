@@ -169,7 +169,7 @@
   /**
    * Clients Slider
    */
-  new Swiper('.clients-slider', {
+  new Swiper('.cloud-slider', {
     speed: 400,
     loop: true,
     autoplay: {
