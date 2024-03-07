@@ -40,6 +40,7 @@ h6 {
   height: 40px;
   border-radius: 4px;
   transition: all 0.4s;
+  margin-bottom: 40px;
 }
 
 .back-to-top i {
@@ -534,7 +535,6 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
-  background: #f4f2f2;
   margin-bottom: 40px;
 }
 
@@ -1555,6 +1555,10 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.contact {
+  background: #fff9f7;
+}
+
 .contact .info-box {
   color: #313030;
   box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
@@ -2186,16 +2190,16 @@ section {
 #footer {
   color: #313030;
   font-size: 14px;
-  background: #fff;
+  background-color: #fff9f7;
 }
 
 #footer .footer-top {
-  padding: 60px 0 30px 0;
-  background: #fff9f7;
+  padding: 30px 0 30px 0;
+  background-color: #eee!important;
 }
 
 #footer .footer-top .footer-contact {
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
 }
 
 #footer .footer-top .footer-contact h4 {
@@ -2223,7 +2227,7 @@ section {
 }
 
 #footer .footer-top .footer-links {
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
 }
 
 #footer .footer-top .footer-links ul {
@@ -2315,7 +2319,7 @@ section {
   color: #313030;
 }
 
-#footer .social-links a {
+#contact .social-links a {
   font-size: 18px;
   display: inline-block;
   background: #ff5821;
@@ -2328,9 +2332,10 @@ section {
   width: 36px;
   height: 36px;
   transition: 0.3s;
+  margin-top: 40px;
 }
 
-#footer .social-links a:hover {
+#contact .social-links a:hover {
   background: #ff7e54;
   color: #fff;
   text-decoration: none;
@@ -2341,7 +2346,6 @@ section {
 }
 
 body{
-
   background-color: #eee;
 }
 
@@ -2385,4 +2389,8 @@ body{
   background: #ff5821;
   display: inline-block;
   transition: 0.3s;
+}
+
+.inner-page{
+  background: #fff9f7;
 }
