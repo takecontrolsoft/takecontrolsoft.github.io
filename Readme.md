@@ -9,8 +9,7 @@
 [![Release](https://img.shields.io/github/v/release/takecontrolsoft/sync_server.svg?style=flat&logo=github)](https://github.com/takecontrolsoft/sync_server/releases/latest)
 [![License](https://img.shields.io/badge/License-Apache-purple)](https://www.apache.org/licenses/LICENSE-2.0)
 
-### Sync Devices project.
-This project is focused on developing a solution for synchronizing all mobile/home devices to one home server.
-The purpose of this project is to help people to keep the important files from all their phones, notebooks, PCs, tablets, TVs and others devices.
+### Company web site.
+This project is under construction and this is the prereleas of the company web site https://takecontrolsoft.eu.
 
 **_The owner of the project is **["Take Control - software & infrastructure"](https://takecontrolsoft.eu/)**_**
