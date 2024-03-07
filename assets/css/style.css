@@ -948,17 +948,18 @@ section {
 --------------------------------------------------------------*/
 .values .card {
   border: 0;
-  padding: 160px 20px 20px 20px;
+  padding: 280px 20px 20px 20px;
   position: relative;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  height: 360px;
 }
 
 .values .card-body {
   z-index: 10;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
   padding: 15px 30px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
@@ -978,6 +979,7 @@ section {
 
 .values .card-text {
   color: #4b4949;
+  display: none;
 }
 
 .values .read-more a {
@@ -992,10 +994,18 @@ section {
   text-decoration: underline;
 }
 
-.values .card:hover .card-body {
-  background: #ff5821;
+.values .card:hover .card {
+  padding: 160px 20px 20px 20px;
 }
 
+.values .card:hover .card-body {
+  background: #ff5821;
+  margin-top: -140px;
+}
+
+.values .card:hover .card-text {
+  display: block;
+}
 .values .card:hover .read-more a,
 .values .card:hover .card-title,
 .values .card:hover .card-title a,
@@ -1549,6 +1559,9 @@ section {
 @media (max-width: 1200px) {
   .faq .faq-list {
     padding: 0;
+  }
+  .values .card:hover .card-body {
+    margin-top: -230px;
   }
 }
 
