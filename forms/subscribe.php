@@ -28,7 +28,7 @@
     } else {
       $strval = $val;
     }
-    $string.=$key.':'.$strval.",";
+    $string.=$key.':'.$strval.",\n";
   }
   
   $string.=']';

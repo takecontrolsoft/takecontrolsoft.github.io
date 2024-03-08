@@ -18,7 +18,7 @@
       let action = thisForm.getAttribute('action');
       let formData = new FormData( thisForm );
 
-      php_email_form_submit(thisForm, action, formData);
+      php_email_form_subscription(thisForm, action, formData);
     
     });
   });
@@ -63,6 +63,26 @@
       }
     });
   });
+  
+  function php_email_form_subscription(thisForm, action, formData) {
+    fetch(action, {
+      method: 'POST',
+      body: formData,
+      headers: {'X-Requested-With': 'XMLHttpRequest'}
+    })
+    .then(response => {
+      if( response.ok ) {
+        return response.text();
+      } else {
+        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
+      }
+    })
+    .then(data => {
+      if (data.trim() == 'OK') {
+       thisForm.reset(); 
+      } 
+    });
+  }
 
   function php_email_form_submit(thisForm, action, formData) {
     fetch(action, {
