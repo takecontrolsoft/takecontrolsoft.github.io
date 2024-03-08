@@ -2265,6 +2265,7 @@ section {
   color: #313030;
   position: relative;
   padding-bottom: 12px;
+  padding-top: 12px;
 }
 
 #footer .footer-top .footer-links {
@@ -2298,7 +2299,7 @@ section {
   color: #656262;
   transition: 0.3s;
   display: inline-block;
-  line-height: 1;
+  line-height: 1.45;
 }
 
 #footer .footer-top .footer-links ul a:hover {
@@ -2319,7 +2320,7 @@ section {
 }
 
 #footer .footer-newsletter form {
-  margin-top: 30px;
+  margin-top: 20px;
   background: #fff;
   padding: 6px 10px;
   position: relative;
