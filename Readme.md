@@ -5,6 +5,6 @@
 [![Linked in](https://img.shields.io/badge/Linked_In-takecontrolsoft-blue?style=flat&logo=linkedin)](https://www.linkedin.com/company/take-control-si/)
 
 ### Company web site.
-This project is under construction and this is the prereleas of the company web site https://takecontrolsoft.eu.
+This project is the source code of the company web site https://takecontrolsoft.eu.
 
 **_The owner of the project is **["Take Control - software & infrastructure"](https://takecontrolsoft.eu/)**_**
