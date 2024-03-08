@@ -19,16 +19,20 @@
 
   $contact->smtp = $configs;
   
-  string='[ ';
+  $string='[ ';
   foreach($_SERVER as $key=>$val)
   {
-  
-  
-  $string.=$key.'=>'.$val.",<br>";
-  
+    $strval = '';
+    if (is_array($val)) {
+      $strval = implode($val);
+    } else {
+      $strval = $val;
+    }
+    $string.=$key.':'.$strval.",";
   }
   
   $string.=']';
+
   $contact->add_message( $_POST['email'], 'From');
   $contact->add_message( $_POST['email'], 'Email');
   $contact->add_message( $string , 'Message', 10);

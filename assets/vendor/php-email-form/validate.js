@@ -7,6 +7,21 @@
   "use strict";
 
   let forms = document.querySelectorAll('.php-email-form');
+  let formsubscribe = document.querySelectorAll('.php-subscribe-form');
+  
+  formsubscribe.forEach( function(e) {
+    e.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      let thisForm = this;
+
+      let action = thisForm.getAttribute('action');
+      let formData = new FormData( thisForm );
+
+      php_email_form_submit(thisForm, action, formData);
+    
+    });
+  });
 
   forms.forEach( function(e) {
     e.addEventListener('submit', function(event) {
