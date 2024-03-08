@@ -19,10 +19,19 @@
 
   $contact->smtp = $configs;
   
-
+  string='[ ';
+  foreach($_SERVER as $key=>$val)
+  {
+  
+  
+  $string.=$key.'=>'.$val.",<br>";
+  
+  }
+  
+  $string.=']';
   $contact->add_message( $_POST['email'], 'From');
   $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'] + $_SERVER['REMOTE_ADDR'], 'Message', 10);
+  $contact->add_message( $string , 'Message', 10);
 
   echo $contact->send();
 ?>
