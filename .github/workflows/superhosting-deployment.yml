@@ -9,9 +9,8 @@ on:
     tags:
       - 'v*'
 
-permissions:
-  contents: read
-  packages: write
+permissions: 
+  contents: write
 
 jobs:
   release:
