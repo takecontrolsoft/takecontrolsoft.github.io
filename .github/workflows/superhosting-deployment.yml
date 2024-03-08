@@ -70,7 +70,6 @@ jobs:
           name: php-app
           path: "./public_html"
 
-      - uses: actions/checkout@v2
       - name: Upload from public_html via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
