@@ -76,4 +76,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_dir: "."
+          local_dir: "/home/runner/work/takecontrolsoft.github.io/takecontrolsoft.github.io/php-app.zip"
+          remote_dir: "./public_html"
