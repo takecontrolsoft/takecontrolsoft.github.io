@@ -8,12 +8,10 @@ on:
   push:
     tags:
       - 'v*'
-
-permissions: write-all
-
 jobs:
   release:
     if: contains(github.ref, 'tags/v')
+    permissions: write-all
     runs-on: ubuntu-latest
     outputs: 
       upload_url: ${{ steps.create_release.outputs.upload_url }}
