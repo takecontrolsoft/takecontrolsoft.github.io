@@ -68,7 +68,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: php-app
-          path: "./public_html"
+          path: "/github/workspace/public_html"
 
       - uses: actions/checkout@v2
       - name: Upload from public_html via FTP
