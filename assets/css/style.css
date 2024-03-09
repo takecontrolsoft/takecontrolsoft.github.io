@@ -861,8 +861,8 @@ section {
   border-radius: 50%;
   display: block;
   position: absolute;
-  left: calc(50% - 47px);
-  top: calc(50% - 47px);
+  left: (50% - 47px);
+  top: calc(50% - 97px);
   overflow: hidden;
 }
 
