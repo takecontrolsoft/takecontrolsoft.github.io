@@ -48,23 +48,7 @@ jobs:
           release_name: ${{ github.ref }}
           body_path: CHANGELOG.md
           draft: false
-          prerelease: false    
-
-      # - name: Upload artifacts
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: takecontrolsoft${{ steps.version.outputs.number }}
-      #     path: public_html
-
-      # - name: Upload Release Asset
-      #   if: ${{ steps.create_release.outputs.upload_url != '' }}
-      #   uses: glentiki/xbin-release-action@v1.0.0
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
-      #   with:
-      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-      #     assets_path: "./public_html"
-      #     assets_name: takecontrolsoft${{ steps.version.outputs.number }}
+          prerelease: false
          
       - name: Upload from public_html via FTP
         uses: airvzxf/ftp-deployment-action@latest
@@ -74,6 +58,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local_dir: "./public_html"
           remote_dir: "./public_html"
-
-        
-                      
