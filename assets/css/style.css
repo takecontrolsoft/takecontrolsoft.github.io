@@ -2403,23 +2403,23 @@ section {
   color: #313030;
 }
 
-#contact .social-links a {
+#footer .social-links a {
   font-size: 18px;
   display: inline-block;
   background: #ff5821;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
-  margin-right: 4px;
+  margin-right: 24px;
   border-radius: 50%;
   text-align: center;
   width: 36px;
   height: 36px;
   transition: 0.3s;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
-#contact .social-links a:hover {
+#footer .social-links a:hover {
   background: #ff7e54;
   color: #fff;
   text-decoration: none;
