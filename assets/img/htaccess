@@ -44,6 +44,9 @@ deny from all
       "text/x-cross-domain-policy" \
       "text/xml"
   </IfModule>
+  <IfModule mod_mime.c>
+    AddEncoding gzip svgz
+  </IfModule>
 </IfModule>
 ## COMPRESSION ##
 

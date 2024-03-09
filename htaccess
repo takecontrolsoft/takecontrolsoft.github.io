@@ -17,7 +17,7 @@ deny from all
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^takecontrolsoft.eu [NC]
-RewriteRule ^(.*)$ http://www.takecontrolsoft.eu/$1 [L,R=301]
+RewriteRule ^(.*)$ https://www.takecontrolsoft.eu/$1 [L,R=301]
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
@@ -65,6 +65,9 @@ RewriteRule . /index.php [L]
       "text/x-component" \
       "text/x-cross-domain-policy" \
       "text/xml"
+  </IfModule>
+  <IfModule mod_mime.c>
+    AddEncoding gzip svgz
   </IfModule>
 </IfModule>
 ## COMPRESSION ##
