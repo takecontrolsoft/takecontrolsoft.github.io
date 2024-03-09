@@ -1,0 +1,7 @@
+# robots.txt for http://www.example.com/
+
+User-agent: *
+Disallow: /github.com/ 
+Disallow: /www.mongodb.com/
+Disallow: /hub.docker.com/
+Disallow: /azure.microsoft.com/
