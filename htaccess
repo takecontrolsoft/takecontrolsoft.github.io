@@ -1,0 +1,45 @@
+
+<FilesMatch "xmlrpc\.php$">
+order deny,allow
+deny from all
+</FilesMatch>
+
+<FilesMatch "xmlrpc\.php$">
+order deny,allow
+deny from all
+</FilesMatch>
+
+<FilesMatch "xmlrpc\.php$">
+order deny,allow
+deny from all
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^takecontrolsoft.eu [NC]
+RewriteRule ^(.*)$ http://www.takecontrolsoft.eu/$1 [L,R=301]
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+## EXPIRES HEADER CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 month"
+ExpiresByType image/jpeg "access 1 month"
+ExpiresByType image/gif "access 1 month"
+ExpiresByType image/png "access 1 month"
+ExpiresByType image/svg "access 1 month"
+ExpiresByType text/css "access 1 day"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType application/javascript "access 1 day"
+ExpiresByType application/x-javascript "access 1 day"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 day"
+ExpiresDefault "access 2 days"
+</IfModule>
+## EXPIRES HEADER CACHING ##
