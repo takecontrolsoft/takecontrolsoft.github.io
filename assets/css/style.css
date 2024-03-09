@@ -407,7 +407,7 @@ h6 {
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.4);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -424,10 +424,11 @@ h6 {
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
+  color: #fff;
 }
 
 #hero h2 {
-  color: #6e5d5a;
+  color: #eee;
   margin-bottom: 50px;
   font-size: 24px;
 }
@@ -486,6 +487,10 @@ h6 {
     margin-right: 0px !important;
     margin-bottom: 10px !important;
     float: none !important;
+  }
+
+  #resources .row>* {
+    width: 50%!important;
   }
 }
 
@@ -911,7 +916,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Clients
+# Cloud
 --------------------------------------------------------------*/
 .cloud .swiper-pagination {
   margin-top: 20px;
@@ -2273,7 +2278,6 @@ section {
 #footer {
   color: #313030;
   font-size: 14px;
-  background-color: #fff9f7;
 }
 
 #footer .footer-top {
@@ -2308,6 +2312,45 @@ section {
   position: relative;
   padding-bottom: 12px;
   padding-top: 12px;
+}
+
+#resources .links{
+  margin-bottom: 30px;
+}
+
+#resources .links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#resources .links ul i {
+  padding-right: 2px;
+  color: #ffa587;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#resources .links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#resources .links ul li:first-child {
+  padding-top: 0;
+}
+
+#resources .links ul a {
+  color: #656262;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1.45;
+}
+
+#resources .links ul a:hover {
+  text-decoration: none;
+  color: #ff5821;
 }
 
 #footer .footer-top .footer-links {
@@ -2430,7 +2473,7 @@ section {
 }
 
 body {
-  background-color: #eee;
+  /*background-color: #eee;*/
 }
 
 .cookiealert {
