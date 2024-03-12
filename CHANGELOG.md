@@ -1,9 +1,13 @@
 <img src="https://takecontrolsoft.eu/assets/img/takecontrolsoft-logo-green.png" alt="Web Site of Take Control - Software & Infrastructure" width="25%">
 
+## 1.0.3 Release notes (2024-03-12)
+
+### Fixes
+* Typo errors fixed in the text.
 
 ## 1.0.2 Release notes (2024-03-09)
 
-### Fixes
+### Enhancements
 * Added Google analytics script.
 * SEO requirements covered.
 
