@@ -1,5 +1,9 @@
 <img src="https://takecontrolsoft.eu/assets/img/takecontrolsoft-logo-green.png" alt="Web Site of Take Control - Software & Infrastructure" width="25%">
 
+## 1.0.5 Release notes (2024-05-11)
+
+### Enhancements
+* Page translated to Bulgarian.
 
 ## 1.0.4 Release notes (2024-03-21)
 
