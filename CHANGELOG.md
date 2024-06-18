@@ -1,5 +1,10 @@
 <img src="https://takecontrolsoft.eu/assets/img/takecontrolsoft-logo-green.png" alt="Web Site of Take Control - Software & Infrastructure" width="25%">
 
+## 2.0.1 Release notes (2024-06-18)
+
+### Enhancements
+* Added new section `Products`.
+
 ## 2.0.0 Release notes (2024-05-11)
 
 ### Enhancements
