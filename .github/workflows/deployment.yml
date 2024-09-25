@@ -58,23 +58,3 @@ jobs:
       #     password: ${{ secrets.FTP_PASSWORD }}
       #     local_dir: "./public_html"
       #     remote_dir: "./public_html"
-
-  deploy:
-      name: Deploy to GitHub Pages
-      needs: release
-
-      # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-      permissions:
-        pages: write 
-        id-token: write 
-
-      # Deploy to the github-pages environment
-      environment:
-        name: github-pages
-        url: ${{ steps.deployment.outputs.page_url }}
-
-      runs-on: ubuntu-latest
-      steps:
-        - name: Deploy to GitHub Pages
-          id: deployment
-          uses: actions/deploy-pages@v4
