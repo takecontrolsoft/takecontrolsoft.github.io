@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Control - Company Presentation</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #fff9f7;
+            color: #584b48;
+            line-height: 1.6;
+        }
+
+        .page {
+            width: 297mm;
+            height: 210mm;
+            padding: 20mm;
+            page-break-after: always;
+            page-break-inside: avoid;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff9f7;
+            border: 1px solid #ddd;
+            margin-bottom: 10mm;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        /* Title Page */
+        .title-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            background: url('https://takecontrolsoft.eu/assets/img/hero-bg.jpg') center/cover no-repeat;
+            padding: 20mm;
+            position: relative;
+        }
+
+        .title-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 280px;
+            background: linear-gradient(to bottom, #fff9f7, transparent);
+        }
+
+        .title-page::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 280px;
+            background: linear-gradient(to top, #fff9f7, transparent);
+        }
+
+        .logo {
+            width: 150px;
+            margin-bottom: 40px;
+        }
+
+        .title-page h1 {
+            font-size: 48px;
+            color: #584b48;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #ff5821;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #584b48;
+            font-style: italic;
+        }
+
+        /* Content Pages */
+        .content-page {
+            justify-content: flex-start;
+        }
+
+        .page-header {
+            border-bottom: 3px solid #ff5821;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+        }
+
+        .page-header h2 {
+            font-size: 36px;
+            color: #584b48;
+            font-weight: 600;
+        }
+
+        .slogan {
+            font-size: 24px;
+            color: #ff5821;
+            font-style: italic;
+            text-align: center;
+            margin: 30px 0;
+            font-weight: 500;
+        }
+
+        .content {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .bullet-list {
+            list-style: none;
+            margin: 20px 0;
+            padding-left: 0;
+        }
+
+        .bullet-list li {
+            padding-left: 30px;
+            margin-bottom: 12px;
+            position: relative;
+            color: #584b48;
+        }
+
+        .bullet-list li:before {
+            content: "▸";
+            color: #ff5821;
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        /* Team Cards */
+        .team-member {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(88, 75, 72, 0.1);
+            border-left: 4px solid #ff5821;
+            margin-bottom: 20px;
+        }
+
+        .team-member h3 {
+            color: #ff5821;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .team-member .role {
+            font-weight: 600;
+            color: #584b48;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        /* Product Cards */
+        .product-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 2px solid #584b48;
+            position: relative;
+        }
+
+        .product-card h3 {
+            color: #ff5821;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .product-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #ff5821;
+            color: #fff9f7;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Technology Stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tech-item {
+            background: #ff5821;
+            color: #fff9f7;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* What Sets Us Apart Section */
+        .highlight-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 3px solid #ff5821;
+            box-shadow: 0 5px 20px rgba(88, 75, 72, 0.15);
+        }
+
+        .highlight-section h2 {
+            color: #ff5821;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Contact Page */
+        .contact-page {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        .contact-info a {
+            color: #ff5821;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .page-footer {
+            position: absolute;
+            bottom: 15mm;
+            left: 20mm;
+            right: 20mm;
+            text-align: center;
+            font-size: 12px;
+            color: #584b48;
+            opacity: 0.7;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 10mm;
+            right: 20mm;
+            font-size: 12px;
+            color: #584b48;
+            opacity: 0.7;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white;
+            }
+            
+            .page {
+                margin: 0;
+                box-shadow: none;
+                border: none;
+                page-break-after: always;
+            }
+        }
+
+        /* Screen view - show page separation */
+        @media screen {
+            body {
+                background: #e0e0e0;
+                padding: 20px 0;
+            }
+            
+            .page {
+                margin: 0 auto 20px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Title -->
+    <div class="page title-page">
+        <img src="https://takecontrolsoft.eu/assets/img/logo.png" alt="Take Control Logo" class="logo">
+        <h1>Take Control<br>Software and Infrastructure</h1>
+        
+        <div class="subtitle">Connected Software Components and Devices</div>
+        <div class="tagline">Software architecture, design and development.<br>Device synchronization, cloud and infrastructure.</div>
+        <div class="page-number">1</div>
+    </div>
+
+    <!-- Page 2: Company Overview -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h2>Company Overview</h2>
+        </div>
+        
+        <div class="content">
+            <p>We believe that intelligent automation of daily processes is the right path to its optimal time usage.</p>
+            
+            <p>With years of experience in software architecture design and a deep understanding of user needs, we create products that:</p>
+            
+            <ul class="bullet-list">
+                <li>Free up your time from routine tasks through smart synchronization between devices and systems</li>
+                <li>Eliminate repetitive activities through automation</li>
+                <li>Ensure smooth operation thanks to reliable cloud infrastructure</li>
+                <li>Give you control over processes wherever you are</li>
+            </ul>
+            
+            <div class="slogan">The time is our most valuable resource.</div>            
+           
+            <p>The main goal of "Take Control - Software and Infrastructure EOOD" is to improve the daily workflow of companies, homes, or individuals. Users use a wide variety of software products that help them in their daily work, but in most cases they need integrations with external products, modules, or services. Our expertise in designing connected software components and devices allows us to create products that work for you - faster, more efficient and more precise.</p>
+       
+         </div>
+    
+        <div class="page-number">2</div>
+    </div>
+
+    <!-- Page 3: Services & Solutions -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h2>Services & Solutions</h2>
+        </div>
+        
+        <div class="content">
+            <p>Therefore, the company offers solutions for connecting software components and synchronizing devices, machines, and servers, as well as developing software products, integrations, automating the processes, developing extensions and add-ons for web browsers, mobile applications, websites, and others.</p>
+            
+            <p>The products are designed to save you time:</p>
+            <ul class="bullet-list">
+                <li>Smart integrations between the systems you use daily</li>
+                <li>Automatic synchronization of your devices with your server</li>
+                <li>Reliable access to your important resources through the cloud</li>
+                <li>Smart organization of your work materials</li>
+            </ul>
+            
+            <p>In addition to its own products, the company also develops products, add-ons, and modifications according to customer requirements, in order to improve their work or production process.</p>
+            
+            <p style="text-align: center; font-size: 18px; color: #ff5821; margin-top: 40px;">
+                <strong>Our goal is to give you the freedom to manage your time.<br>
+                Let technology work for you while you focus on what really matters.</strong>
+            </p>
+        </div>
+        
+        <div class="page-number">3</div>
+    </div>
+
+    <!-- Page 4: Accounting Products -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h2>Products - Accounting Solutions</h2>
+        </div>
+        
+        <div class="content">
+            <p style="margin-bottom: 30px;">Integrations and accounting products to facilitate the work of accounting offices and accelerate the process of submitting data to state institutions such as NRA, NSI</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                <div style="display: flex; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(88, 75, 72, 0.1);">
+                    <img src="https://nsiassistant.bg/images/logo.png" alt="NSI Assistant" style="width: 60px; height: 60px; margin-right: 15px; object-fit: contain;">
+                    <div style="flex: 1;">
+                        <h3 style="color: #ff5821; margin-bottom: 5px; font-size: 18px;">NSI Assistant</h3>
+                        <p style="margin-bottom: 5px; font-size: 14px;">Automatic filling of NSI annual reports for statistical data submission.</p>
+                        <a href="https://nsiassistant.bg" style="color: #ff5821; text-decoration: none; font-size: 14px;">nsiassistant.bg →</a>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(88, 75, 72, 0.1);">
+                    <div style="width: 60px; height: 60px; margin-right: 15px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #584b48;">
+                        <span style="font-size: 28px;">📋</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="color: #ff5821; margin-bottom: 5px; font-size: 18px;">Electronic Work Record</h3>
+                        <p style="margin-bottom: 5px; font-size: 14px;">Application for compiling and validating electronic work records, NRA compliant.</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(88, 75, 72, 0.1);">
+                    <div style="width: 60px; height: 60px; margin-right: 15px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #584b48;">
+                        <span style="font-size: 28px;">💼</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="color: #ff5821; margin-bottom: 5px; font-size: 18px;">Napi.bg</h3>
+                        <p style="margin-bottom: 5px; font-size: 14px;">Comprehensive Bulgarian accounting solutions for businesses.</p>
+                        <a href="https://napi.bg" style="color: #ff5821; text-decoration: none; font-size: 14px;">napi.bg →</a>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(88, 75, 72, 0.1);">
+                    <div style="width: 60px; height: 60px; margin-right: 15px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #584b48;">
+                        <span style="font-size: 28px;">📊</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="color: #ff5821; margin-bottom: 5px; font-size: 18px;">[Product Name]</h3>
+                        <p style="margin-bottom: 5px; font-size: 14px;">[Add description for your fourth accounting product]</p>
+                        <a href="#" style="color: #ff5821; text-decoration: none; font-size: 14px;">[website] →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">4</div>
+    </div>
+
+    <!-- Page 5: E-commerce & Business Platforms -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h2>Products - E-commerce & Business Platforms</h2>
+        </div>
+        
+        <div class="content">
+            <h3 style="color: #584b48; margin-bottom: 15px;">E-commerce Platforms</h3>
+            <p style="margin-bottom: 20px; font-size: 14px;">E-commerce stores for videos and digital products with external integration to Zoom and other software access and subscriptions, fully compliant with NRA requirements for electronic commerce</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px;">
+                <div style="display: flex; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(88, 75, 72, 0.1);">
+                    <div style="width: 60px; height: 60px; margin-right: 15px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #584b48;">
+                        <span style="font-size: 28px;">👣</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="color: #ff5821; margin-bottom: 5px; font-size: 18px;">Pedicure Expert</h3>
+                        <p style="margin-bottom: 5px; font-size: 14px;">Professional online platform for pedicure courses and educational content.</p>
+                        <a href="https://pedicureexpert.bg" style="color: #ff5821; text-decoration: none; font-size: 14px;">pedicureexpert.bg →</a>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(88, 75, 72, 0.1);">
+                    <div style="width: 60px; height: 60px; margin-right: 15px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #584b48;">
+                        <span style="font-size: 28px;">🧵</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="color: #ff5821; margin-bottom: 5px; font-size: 18px;">AGI Broderie</h3>
+                        <p style="margin-bottom: 5px; font-size: 14px;">Digital embroidery design marketplace and educational platform.</p>
+                        <a href="https://agibroderie.com" style="color: #ff5821; text-decoration: none; font-size: 14px;">agibroderie.com →</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: #584b48; margin-bottom: 15px;">Business Booking Platforms</h3>
+            <p style="margin-bottom: 20px; font-size: 14px;">Professional booking and scheduling solutions for businesses</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                <div style="display: flex; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(88, 75, 72, 0.1);">
+                    <div style="width: 60px; height: 60px; margin-right: 15px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #584b48;">
+                        <span style="font-size: 28px;">💼</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="color: #ff5821; margin-bottom: 5px; font-size: 18px;">Career with Elena</h3>
+                        <p style="margin-bottom: 5px; font-size: 14px;">Career coaching and consultation booking platform.</p>
+                        <a href="https://careerwithelena.com" style="color: #ff5821; text-decoration: none; font-size: 14px;">careerwithelena.com →</a>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(88, 75, 72, 0.1);">
+                    <div style="width: 60px; height: 60px; margin-right: 15px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #584b48;">
+                        <span style="font-size: 28px;">🎯</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="color: #ff5821; margin-bottom: 5px; font-size: 18px;">Osaznato</h3>
+                        <p style="margin-bottom: 5px; font-size: 14px;">Conscious living coaching and workshop booking system.</p>
+                        <a href="https://osaznato.com" style="color: #ff5821; text-decoration: none; font-size: 14px;">osaznato.com →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">5</div>
+    </div>
+
+    <!-- Page 6: Technology Stack -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h2>Technology Stack</h2>
+        </div>
+        
+        <div class="content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+            <p style="margin-bottom: 40px; text-align: center; font-size: 18px;">We leverage modern technologies to deliver robust and scalable solutions</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; width: 100%; max-width: 800px;">
+                <div>
+                    <h3 style="color: #584b48; margin-bottom: 20px;">Platforms</h3>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <span class="tech-item">Windows</span>
+                        <span class="tech-item">Linux</span>
+                        <span class="tech-item">Mac</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="color: #584b48; margin-bottom: 20px;">Technologies</h3>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <span class="tech-item">.NET</span>
+                        <span class="tech-item">Flutter</span>
+                        <span class="tech-item">Dart</span>
+                        <span class="tech-item">Go</span>
+                        <span class="tech-item">ASP.NET Core</span>
+                        <span class="tech-item">JavaScript</span>
+                        <span class="tech-item">Docker</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="color: #584b48; margin-bottom: 20px;">Cloud & Infrastructure</h3>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <span class="tech-item">Azure</span>
+                        <span class="tech-item">AWS</span>
+                        <span class="tech-item">Databases</span>
+                        <span class="tech-item">Superhosting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">6</div>
+    </div>
+
+    <!-- Page 7: Team -->
+    <div class="page content-page">
+        <div class="page-header">
+            <h2>Team and Experience</h2>
+        </div>
+        
+        <div class="content">
+            <div class="team-member">
+                <h3>Desislava Stefanova</h3>
+                <div class="role">Founder and Software Engineer</div>
+                <p>The company was founded by Desislava Stefanova, who has 20 years of experience in the development, design, and management of software products not only in Bulgaria but also in other countries such as Israel, Belgium, Netherlands, Denmark, and the USA. She worked for 10 years as a chief software architect in Bulgaria's leading Facility Management system for managing business buildings and expenses. FM Center manages the buildings of "Business Park Sofia", "Sopharma", "Sofia University", "Allianz Bulgaria", "Bulgarian State Railways", "Mercedes Bulgaria", and others.</p>
+            </div>
+            
+            <div class="two-column">
+                <div class="team-member">
+                    <h3>Daniela Todorova</h3>
+                    <div class="role">Senior Software Developer</div>
+                    <ul class="bullet-list">
+                        <li>14 years of experience in web and mobile application development</li>
+                        <li>Specialization in cross-platform integrations</li>
+                        <li>Expert in modern development frameworks</li>
+                    </ul>
+                </div>
+                
+                <div class="team-member">
+                    <h3>Ilina Stefanova</h3>
+                    <div class="role">Quality Assurance Lead</div>
+                    <ul class="bullet-list">
+                        <li>15 years of experience in application testing</li>
+                        <li>Process design and implementation</li>
+                        <li>Project planning and task management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">7</div>
+    </div>
+
+    <!-- Page 8: What Sets Us Apart -->
+    <div class="page content-page">
+        <div class="highlight-section">
+            <h2>What Sets Us Apart</h2>
+            
+            <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
+                What sets us apart from larger companies is our direct communication with clients. We understand your actual needs without the bureaucracy and layers of management that often dilute the original requirements. Our lean structure enables us to work quickly, stay focused, and keep costs minimal.
+            </p>
+            
+            <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
+                As a newly established company, the firm has full motivation to demonstrate loyalty, responsibility, competence, and to build trust with its clients. Therefore, you can count on us to treat every detail with attention and professionalism in the execution of the assigned task.
+            </p>
+            
+            <p style="font-size: 18px; line-height: 1.8; font-style: italic; color: #584b48; border-top: 2px solid #ff5821; padding-top: 20px; margin-top: 30px;">
+                "Take Control - Software and Infrastructure EOOD" guarantees that the development and implementation of the assigned software will be fully compliant with the client's requirements. We will provide a convenient and easy-to-use product based on an analysis of the client's workflow.
+            </p>
+        </div>
+        
+        <div class="page-number">8</div>
+    </div>
+
+    <!-- Page 9: Contact -->
+    <div class="page contact-page">
+        <img src="https://takecontrolsoft.eu/assets/img/logo.png" alt="Take Control Logo" class="logo" style="width: 150px; margin-bottom: 40px;">
+        
+        <h2 style="color: #584b48; font-size: 36px; margin-bottom: 30px;">Contact Information</h2>
+        
+        <div class="contact-info">
+            <p><strong style="color: #ff5821;">Company:</strong> Take Control - Software and Infrastructure EOOD</p>
+            <p><strong style="color: #ff5821;">Location:</strong> Sofia 1715, Bulgaria</p>
+            <p><strong style="color: #ff5821;">Website:</strong> <a href="https://takecontrolsoft.eu">takecontrolsoft.eu</a></p>
+            <p><strong style="color: #ff5821;">Products:</strong> <a href="https://products.takecontrolsoft.eu">products.takecontrolsoft.eu</a></p>
+            <p><strong style="color: #ff5821;">GitHub:</strong> <a href="https://github.com/takecontrolsoft">github.com/takecontrolsoft</a></p>
+            <p><strong style="color: #ff5821;">LinkedIn:</strong> <a href="https://www.linkedin.com/company/take-control-si">linkedin.com/company/take-control-si</a></p>
+        </div>
+        
+        <div style="margin-top: 60px;">
+            <p style="font-size: 20px; font-style: italic; color: #ff5821;">
+                Thank you for your interest in our company!
+            </p>
+        </div>
+        
+        <div class="page-number">9</div>
+    </div>
+</body>
+</html>
