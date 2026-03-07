@@ -286,6 +286,41 @@
       mirror: false
     })
   });
+
+  /**
+   * Make product cards fully clickable
+   */
+  const productCards = select('.modern-product-card[data-href]', true)
+  if (productCards && productCards.length) {
+    productCards.forEach(card => {
+      card.setAttribute('role', 'link')
+      card.setAttribute('tabindex', '0')
+
+      const openCardLink = () => {
+        const href = card.getAttribute('data-href')
+        const target = card.getAttribute('data-target') || '_self'
+        if (!href) return
+        if (target === '_blank') {
+          window.open(href, '_blank', 'noopener,noreferrer')
+        } else {
+          window.location.href = href
+        }
+      }
+
+      card.addEventListener('click', (event) => {
+        if (event.target.closest('a')) return
+        openCardLink()
+      })
+
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault()
+          openCardLink()
+        }
+      })
+    })
+  }
+
   var cookieAlert = document.querySelector(".cookiealert");
   var acceptCookies = document.querySelector(".acceptcookies");
 
