@@ -528,18 +528,22 @@ h6 {
   margin-left: 10px;
 }
 
-#logo h1 {
+#logo h1,
+#logo .logo-title {
   color: #6e5d5a;
   font-size: 21px;
   text-align: left;
   font-weight: bold;
+  display: block;
 }
 
-#logo h2 {
+#logo h2,
+#logo .logo-subtitle {
   color: #000;
   font-size: 16px;
   text-align: left;
   font-weight: 600;
+  display: block;
 }
 /*--------------------------------------------------------------
 # Sections General
