@@ -28,6 +28,67 @@
   <meta property="og:locale" content="en_GB" />
   <meta property="og:locale:alternate" content="en-US" />
   <meta property="og:site_name" content="takecontrolsoft" />
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Take control - Software and Infrastructure" />
+  <meta name="twitter:description" content="Software architecture, design and development. Device synchronization, cloud and infrastructures." />
+  <meta name="twitter:image" content="https://takecontrolsoft.eu/assets/img/logo.png" />
+  <meta name="twitter:image:alt" content="Take Control Software logo" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://takecontrolsoft.eu/" />
+
+  <!-- Alternate language -->
+  <link rel="alternate" hreflang="bg" href="https://takecontrolsoft.eu/bg/" />
+  <link rel="alternate" hreflang="en" href="https://takecontrolsoft.eu/" />
+  <link rel="alternate" hreflang="x-default" href="https://takecontrolsoft.eu/" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://takecontrolsoft.eu/#organization",
+        "name": "Take Control Software",
+        "url": "https://takecontrolsoft.eu",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://takecontrolsoft.eu/assets/img/logo.png"
+        },
+        "email": "info@takecontrolsoft.eu",
+        "telephone": "+359877897005",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sofia",
+          "addressRegion": "Sofia",
+          "addressCountry": "BG"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://takecontrolsoft.eu/#website",
+        "url": "https://takecontrolsoft.eu",
+        "name": "Take Control - Software and Infrastructure",
+        "publisher": { "@id": "https://takecontrolsoft.eu/#organization" },
+        "inLanguage": ["en", "bg"]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://takecontrolsoft.eu/",
+        "url": "https://takecontrolsoft.eu/",
+        "name": "Take control - Software and Infrastructure",
+        "description": "Connected Software Components and Devices. Software architecture, design and development. Device synchronization, cloud and infrastructures.",
+        "isPartOf": { "@id": "https://takecontrolsoft.eu/#website" },
+        "about": { "@id": "https://takecontrolsoft.eu/#organization" },
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -74,8 +135,8 @@
               alt="Take control - Software and Infrastructure" class="img-fluid" itemprop="logo"></a>
         </div>
         <div id="logo">
-          <h1>Take Control</h1>
-          <h2>Software and Infrastructure</h2>
+          <h2>Take Control</h2>
+          <p class="h2">Software and Infrastructure</p>
         </div>
       </div>
       <nav id="navbar" class="navbar">
